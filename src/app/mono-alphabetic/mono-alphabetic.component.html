@@ -1,0 +1,22 @@
+<!--<h2>Encrypted code:</h2>-->
+
+<!--<p>{{encryptedText}}</p>    -->
+
+<!--<p>{{decryptedArray}}</p>-->
+
+<!--<div *ngFor="let letter of decryptedArray" style="float: left"><div style="color:red">{{letter}}</div></div>-->
+
+<div *ngFor="let letter of decryptedArray" style="float: left">
+  <div [ngClass]="{decrypted: letter.toLowerCase()===letter && letter.toUpperCase()!==letter, encrypted: letter.toUpperCase()===letter && letter.toLowerCase()!==letter}">
+    {{letter}}{{letter===' ' ? '-':''}}
+  </div>
+</div>
+
+<!--<p>{{decryptedString}}</p>-->
+
+<br>
+<chart [options]="options"></chart>
+<!--{{letterFrequencies}}-->
+<div style="float: left" *ngFor="let letter of allLetters">
+  <app-letter [letter]="letter" [remainingLetters]="remainingLetters" (onSelected)="onSelected($event)"></app-letter>
+</div>
