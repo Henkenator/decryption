@@ -1,0 +1,7 @@
+<div style="border-color: black; border: solid">
+  <h4 style="margin-bottom: 0px; margin-top: 0px; color:red">{{letter}}</h4>
+  <select [(ngModel)]="selectedLetter" (change)="onChange($event)">
+    <option></option>
+    <option *ngFor="let letter of remainingLetters">{{letter}}</option>
+  </select>
+</div>
